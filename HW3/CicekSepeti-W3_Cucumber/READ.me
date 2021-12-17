@@ -1,1 +1,25 @@
 
+Bu projede Java dilinde Rest Assured ile TestNG kütüphaneleri kullanılarak IMDB API testleri yapılmaktadır.
+Rapid API sitesine üye olarak buradan kolaylıkla IMDB API yapısını görebileceğimiz bir yere ulaşıyoruz. Rapid API platformu bizlere giden isteğin hangi parametreleri veya headerları içermesi gerektiğini göstermektedir.
+Normalde günde belli bir istek sayısından sonra ücretli bir yapıya sahiptir fakat bu proje demo niteliği taşıdığı için ücretsiz versiyonu ile öğrendiklerimizi deneyebiliyoruz.
+https://rapidapi.com/apidojo/api/imdb8/ sayfasına giderek API request/response şemasını detaylı inceleyip deneyebilirsiniz.
+
+
+
+Öncelikle "BeforeTest" belirteci ile gösterilen alanda her testten önce istek atılan URl ve istek ile gidecek iki adet headerı gönderiyoruz. İsteklerin başarılı olabilmesi için bu iki headerın varlığı zorunludur. Bu headerler ve gönderilecek değerler rapipAPI da gösterilmektedir. "x-rapidapi-host" "x-rapidapi-key"
+
+Rest Assured ile gerçeklediğim testler sırası ile:
+* Test 1
+Sadece başarılı giriş yapılıp yapılmadığının kontrolü sağlanmaktadır. statusCode(200) alındı ise başarılı giriş yapılmıştır.
+
+* Test 2
+/get-known-for isteği atılarak dönen cevaptaki ilk filmin raytinginin istenen raytinge eş olup olmadığı kontrolü gerçeklenir.
+
+* Test 3
+/get-awards isteği atılarak dönen listedeki ilk ödülün istenen ödül ismiyle denkliğinin kontrölü yapılır.
+
+* Test 4
+/get-interesting-job isteği atılarak dönen listedeki parametrelerin "hasItems" ile kontrölü yapılmaktadır.
+
+* Test 5
+/get-seasons isteği atılarak listedeki ilk filmin/dizinin 1. sezon 1. bölümünün isminin "constainsString" ile kontrölü sağlanır.
