@@ -32,8 +32,8 @@ using System.Threading;
              Thread.Sleep(2000);
              loginbutton.Click();
             Thread.Sleep(2000);
-             username.SendKeys("aysinr");
-             password.SendKeys("aysin123");
+             username.SendKeys("your_username");
+             password.SendKeys("your_password");
              signin.Click();
              Thread.Sleep(4000);
 
